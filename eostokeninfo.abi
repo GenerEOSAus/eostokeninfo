@@ -1,0 +1,78 @@
+{
+  "version": "eosio::abi/1.0",
+  "types": [{
+      "new_type_name": "account_name",
+      "type": "name"
+    }
+  ],
+  "structs": [
+    {
+      "name": "set",
+      "base": "",
+      "fields": [
+        {"name":"issuer", "type":"account_name"},
+        {"name":"max_supply", "type":"extended_asset"},
+        {"name":"description", "type":"string"},
+        {"name":"purpose", "type":"string"},
+        {"name":"website", "type":"string"},
+        {"name":"airgrab_json", "type":"string"},
+        {"name":"ico_json", "type":"string"}
+      ]
+    },{
+      "name": "remove",
+      "base": "",
+      "fields": [
+        {"name":"issuer", "type":"account_name"},
+        {"name":"max_supply", "type":"extended_asset"}
+      ]
+    },{
+      "name": "currency_stats",
+      "base": "",
+      "fields": [
+        {"name":"supply", "type":"asset"},
+        {"name":"max_supply", "type":"asset"},
+        {"name":"issuer", "type":"account_name"}
+      ]
+    },{
+      "name": "tokens",
+      "base": "",
+      "fields": [
+        {"name":"issuer", "type":"account_name"},
+        {"name":"max_supply", "type":"extended_asset"},
+        {"name":"description", "type":"string"},
+        {"name":"purpose", "type":"string"},
+        {"name":"website", "type":"string"},
+        {"name":"airgrab_json", "type":"string"},
+        {"name":"ico_json", "type":"string"},
+        {"name":"fanclub_winner", "type":"account_name"},
+        {"name":"fanclub_bid", "type":"extended_asset"},
+        {"name":"fanclub_comment", "type":"string"}
+      ]
+    }
+  ],
+  "actions": [
+    { "name": "set", "type": "set", "ricardian_contract": "" },
+    { "name": "remove", "type": "remove", "ricardian_contract": "" },
+  ],
+  "tables": [{
+      "name": "tokens",
+      "type": "tokens",
+      "index_type": "i64",
+      "key_names" : ["max_supply"],
+      "key_types" : ["uint64"]
+    },
+    {
+      "name": "stat",
+      "type": "currency_stats",
+      "index_type": "i64",
+      "key_names": [
+        "currency"
+      ],
+      "key_types": [
+        "uint64"
+      ]
+    }
+  ],
+  "ricardian_clauses": [],
+  "abi_extensions": []
+}
