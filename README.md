@@ -46,6 +46,66 @@ This returns any registered tokens with the following table
    
    * If you remove the entry and later add it again the fanclub is reset... make this decision with care!
    
+## Suggested airgrab_json:
+RIDL:
+```
+{
+    "account_name": "ridlridlcoin",
+    "action_name": "claim",
+    "action_parameters": [
+       {
+          "name": "claimer",
+          "type": "account_name"
+       }
+    ]
+}
+```   
+POOR:
+```
+{
+    "account_name": "poormantoken",
+    "action_name": "signup",
+    "action_parameters": [
+       {
+          "name": "owner",
+          "type": "account_name"
+       },
+       {
+          "name": "quantity",
+          "type": "asset",
+          "value": "0.0000 POOR"
+       }
+    ]
+}
+```  
+
+## Suggested ico_json
+```
+{
+    "account_name": "eosio.token",
+    "action_name": "transfer",
+    "action_parameters": [
+       {
+          "from": "owner",
+          "type": "account_name"
+       },
+       {
+          "from": "to",
+          "type": "account_name",
+          "value": "supercoolico"
+       },
+       {
+          "name": "quantity",
+          "type": "asset"
+       },
+       {
+          "name": "memo",
+          "type": "string"
+          "value": "purchase ico"
+       },
+    ]
+}
+``` 
 ### All these features will be added to the [EOSToolkit](https://eostoolkit.io) to make it even easier!
 
 
