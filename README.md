@@ -86,7 +86,7 @@ POOR:
     "action_name": "transfer",
     "action_parameters": [
        {
-          "from": "owner",
+          "from": "from",
           "type": "account_name"
        },
        {
