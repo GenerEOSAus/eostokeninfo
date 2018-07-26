@@ -100,7 +100,7 @@ POOR:
        },
        {
           "name": "memo",
-          "type": "string"
+          "type": "string",
           "value": "purchase ico"
        },
     ]
